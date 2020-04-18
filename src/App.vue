@@ -57,7 +57,7 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import Timer from '@/components/Timer';
+import Timer from '@/components/Timer.vue';
 
 @Component({
   components: { Timer }
