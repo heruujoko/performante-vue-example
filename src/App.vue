@@ -50,13 +50,18 @@
         </div>
       </div>
     </form>
+    <br />
+    <timer />
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
+import Timer from '@/components/Timer';
 
-@Component
+@Component({
+  components: { Timer }
+})
 export default class App extends Vue {
   mounted() {
     console.log("app mounted");
