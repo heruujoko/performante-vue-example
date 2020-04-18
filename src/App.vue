@@ -52,15 +52,18 @@
     </form>
     <br />
     <timer />
+    <br />
+    <networkable />
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
 import Timer from '@/components/Timer.vue';
+import Networkable from '@/components/Networkable.vue';
 
 @Component({
-  components: { Timer }
+  components: { Timer, Networkable }
 })
 export default class App extends Vue {
   mounted() {
