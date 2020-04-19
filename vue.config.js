@@ -4,7 +4,7 @@ let plugins = [];
 let optimization = {};
 
 // comment line 6 to disable analyzer
-plugins.push(new BundleAnalyzerPlugin());
+// plugins.push(new BundleAnalyzerPlugin());
 
 // ignore moment locale
 plugins.push(new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/));
