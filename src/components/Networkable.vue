@@ -16,7 +16,7 @@ import { Vue, Component } from "vue-property-decorator";
 import UserResponse from "@/interfaces/UserResponse";
 import User from "@/interfaces/User";
 import axios from "axios";
-import * as _ from "lodash";
+import findIndex from "lodash/findIndex";
 
 @Component
 export default class Networkable extends Vue {
@@ -28,13 +28,13 @@ export default class Networkable extends Vue {
   }
 
   async getData() {
-    const resp = await axios.get("https://reqres.in/api/users");
-    const parsed: UserResponse = resp.data;
+    const resp = await fetch("https://reqres.in/api/users").then(response => response.json());
+    const parsed: UserResponse = resp;
     this.users = parsed.data;
   }
 
   findEmma() {
-    const index = _.findIndex(this.users, (u: User) => {
+    const index = findIndex(this.users, (u: User) => {
       return u.first_name == "Emma";
     });
     alert(`emma is at index ${index}`);
