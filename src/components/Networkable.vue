@@ -28,8 +28,8 @@ export default class Networkable extends Vue {
   }
 
   async getData() {
-    const resp = await axios.get("https://reqres.in/api/users");
-    const parsed: UserResponse = resp.data;
+    const resp = await fetch("https://reqres.in/api/users").then(response => response.json());
+    const parsed: UserResponse = resp;
     this.users = parsed.data;
   }
 
